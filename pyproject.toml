@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slider-captcha-solver"
+version = "0.1.0"
+description = "Research toolkit for slider CAPTCHA automation: OCR gap localization, human-like trajectory generation, network capture and controlled experiments."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "requests>=2.28",
+    "playwright>=1.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+slider-solver = "slider_solver.cli:main"
+
+[tool.setuptools]
+packages = ["slider_solver"]
